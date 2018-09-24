@@ -14,9 +14,9 @@ def anonymous_login(host,port=21):
     ftp.sendline("anonymous")
     ftp.expect_exact("ftp>")
     if "Login authentication failed" not in ftp.before:
-        print "[+] "+host.rstrip("\r\n") + " is Vulnerable to Anonymous Login" 
+        pwn.log.success(host.rstrip("\r\n") + " is Vulnerable to Anonymous Login")
     else:
-        print "[-] " + host.rstrip("\r\n") + " is NOT Vulnerable"
+       pwn.log.failure(host.rstrip("\r\n") + " is NOT Vulnerable")
 
 subdomains = open(hosts,"r")
 
