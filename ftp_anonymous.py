@@ -2,7 +2,7 @@
 
 import pexpect
 import sys
-
+import pwn
 
 hosts = sys.argv[1]
 
